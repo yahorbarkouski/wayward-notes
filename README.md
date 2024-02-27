@@ -4,15 +4,16 @@
     + [Gradle](#gradle)
   * [Testing](#testing)
   * [Queues and messaging](#queues-and-messaging)
-  * [Compilers and VMs](#compilers-and-vms)
+  * [Compilers, VMs and languages](#compilers-vms-and-languages)
   * [Kotlin](#kotlin)
     + [Coroutines](#coroutines)
     + [Libraries and frameworks](#libraries-and-frameworks)
     + [IntelliJ Plugins](#intellij-plugins)
   * [Java](#java)
+    + [Libraries and frameworks](#libraries-and-frameworks-1)
 - [Databases](#databases)
 - [Design](#design)
-  * [Insipration](#insipration)
+  * [Inspiration](#inspiration)
   * [Libraries](#libraries)
   * [Guidance](#guidance)
   * [Motion and animation](#motion-and-animation)
@@ -24,7 +25,7 @@
   * [Components](#components)
   * [Libraries and Frameworks](#libraries-and-frameworks-1)
 - [Machine learning](#machine-learning)
-- [Interpreters, compilers, and languages](#interpreters--compilers--and-languages)
+- [Interpreters, compilers, and languages](#interpreters-compilers-and-languages)
 - [Tools](#tools)
 - [Infrastructure](#infrastructure)
   * [Learning](#learning)
@@ -38,6 +39,7 @@
 
 ## Backend
 ### Build tools
+- [Amper](https://github.com/JetBrains/amper) – relatevely new build and project configuration tool with a focus on the user experience and the IDE from JetBrains. Seems like great Gradle alternative for multiplatform projects
 #### Gradle
 - [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) – Gradle Kotlin DSL primer. Just in case you're still using Groovy, it's time to switch
 - [30 ideas to reduce your Gradle build time](https://blog.dipien.com/30-ideas-to-reduce-your-gradle-build-times-2da13d1c6276) – great thoughts on one of the most painful parts of JVM-based development – build time. ~10 min read
@@ -49,9 +51,12 @@
 - [Conductor/Kafka](https://www.conduktor.io/kafka/) – lots of learning resources, including articles and videos. The website UI for a backend-related tool is just surprising, not sure if it's a good or bad thing
 - [Kafka: a map of traps for the enlightened dev and op by Emmanuel Bernard And Clement Escoffier](https://www.youtube.com/watch?v=paVdXL5vDzg&t=2s&ab_channel=Devoxx) – the best Kafka deep dive you can find on the internet. ~3h video, but worth every minute. I was so delighted to find it, even asked to provide a [slides link](https://drive.google.com/drive/folders/1yrOtC7JO6W9Eig7yY6TQT9qCu_thQN-s)
 - [Idempotent consumers](https://medium.com/lydtech-consulting/kafka-idempotent-consumer-transactional-outbox-74b304815550) – short and clear explanation of idempotent consumers and transactional outbox pattern. ~5 min read
-### Compilers and VMs
+### Compilers, VMs and languages
 - [GraalVM, AOT and JIT](https://www.marcobehler.com/guides/graalvm-aot-jit) – great intro to the world of GraalVM and compilation techniques, and to where Java is heading. ~10 min read
 - [Runtime efficiency in Spring](https://spring.io/blog/2023/10/16/runtime-efficiency-with-spring#jvm-checkpoint-restore-scale-to-zero-with-spring-and-project-crac) – virtual threads, optimized container deployment, checkpoint restore – how Spring is trying to be more efficient in the cloud. ~5 min read
+- [Fastr](https://github.com/oracle/fastr) – a high-performance implementation of the R programming language, built on GraalVM
+- [Ballerina](https://github.com/ballerina-platform/ballerina-lang) – open-source cloud-native programming language optimized for integration
+
 
 ### Kotlin
 I love Kotlin with all my heart, and it's the main language I'm using for backend development. Lots of resources here, but I'll try to keep it short
@@ -67,12 +72,17 @@ We're living in the world of lightweight trends, and Kotlin is one of the best l
 - [Arrow Meta](https://github.com/arrow-kt/arrow-meta) – a library for building meta-programming plugins for Kotlin compiler.
 - [Krush](https://github.com/TouK/krush) – idiomatic persistence layer for Kotlin, haven't tried it yet, but seems to be a good alternative to Exposed
 - [SQLDelight](https://github.com/cashapp/sqldelight) – type-safe SQL for Kotlin, multiplatform, and multi-database. Seems like a good jOOQ alternative to try
-- [Dokka](https://github.com/Kotlin/dokka) – a documentation engine for Kotlin. 
+- [Dokka](https://github.com/Kotlin/dokka) – a documentation engine for Kotlin.
+- [Kotlin compiler server](https://github.com/JetBrains/kotlin-compiler-server) – ever wondered what happens when you click on the 'run' button in Kotlin Playground? This is the server that does the magic. 
+- [Kotlin Monaco laguage server](https://github.com/yahorbarkouski/kotlin-monaco-language-server) – the showcase I've built for the Kotlin compiler server in combination with Monaco editor.
+
 #### IntelliJ Plugins
 - [IntelliJ Rust support](https://github.com/intellij-rust/intellij-rust) – I don't care much about Rust, but the way it's supported in IntelliJ is just amazing. The best real world example on how to build a language plugin for Jetbrains IDEs
 ### Java
 - [Relearning Java thread primitives](https://foojay.io/today/relearning-java-thread-primitives/) – a short article on Java thread primitives and how the evolution of Java has changed the way we write concurrent code. Good one, if you still used to Java5-style habits. ~5 min read
-
+#### Libraries and frameworks
+- [Micronaut](https://micronaut.io/) – my favourite web framework for Java. Highly maintained, xN faster than Spring, lots of features and integrations.
+- [Minum](https://github.com/byronka/minum) – a minimalistic web framework for Java, similar to Jooby and Ktor
 
 ## Databases
 Ah yes, the big world of big data. Fancy deep dive guides on SQL, NoSQL, and everything in between
@@ -87,7 +97,7 @@ Ah yes, the big world of big data. Fancy deep dive guides on SQL, NoSQL, and eve
 
 
 ## Design
-### Insipration
+### Inspiration
 - [Layers](https://layers.to/) – the first website that comes to mind when I need some inspiration for the web design.
 - [Relume](https://www.relume.io/) – AI-powered website builder. I don't really use it, but their landing is a piece of art.
 - [Commit mono](https://commitmono.com/) – opensource neutral font for developers and designers, but it's on my list because of its website simplicity and style - easy to navigate, easy to read, easy to get
@@ -145,8 +155,11 @@ I love Next and Vercel teams. The way they build products and community around t
 - [Excalidraw](https://excalidraw.com/) – a whiteboard tool aka _what tool do you use to draw your diagrams?_ Hand-drawn feel, love it. I've migrated from lucid charts to this one for the sake of visual appeal, and still subscribed after a year of usage.
 - [Glances](https://github.com/nicolargo/glances) – open-source system cross-platform monitoring tool, allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage, and more
 - [./jg](https://jqlang.github.io/jq/) – a lightweight and flexible command-line JSON processor
+- [./htmlq](https://github.com/mgdm/htmlq) – like jq, but for HTML :)
 - [Color scale](https://hihayk.github.io/scale/#4/6/50/80/-51/67/20/14/1D9A6C/29/154/108/white) – a tool to generate color scales for your projects, quite an easy one
 - [Endless tools](https://beta.endlesstools.io/) – customazible and high-quality collection of patterns, covers, 3D objects
+- [Anki](https://apps.ankiweb.net/) – spaced repetition program typically used for learning foreign languages to memorise keyboards shortcuts and shell commands
+- [Whisky](https://github.com/Whisky-App/Whisky) – MacOS app I use to play Windows games :) Feels better than Parallels and CrossOver so far
 
 ## Infrastructure
 ### Learning
@@ -183,6 +196,7 @@ Some random guys I follow, mostly for inspiration and tech deep dives. I'm not r
 - [Overreacted](https://overreacted.io/) by Dan Abramov, the classic of React world. Personal highlights include [The “Bug-O” Notation](https://overreacted.io/the-bug-o-notation/), [npm audit: broken by design](https://overreacted.io/npm-audit-broken-by-design/), [The Elements of UI Engineering](https://overreacted.io/elements-of-ui-engineering/), [The Two Reacts](https://overreacted.io/the-two-reacts/)
 - [Kerkour](https://kerkour.com/) – a blog by Sylvain Kerkour, the author of Black Hat Rust, Cloudflare for Speed and Security and a few other books (and he's very productive!). Really useful for security, performance and other more general topics. Some good examples: [Adblocker can be strange sometimes](https://kerkour.com/adblocker-strange-bug-image-dimensions), [JSON Web Tokens are actually fine, just not for sessions](https://kerkour.com/jwt), [HTTP Caching: ETag vs Last-Modified headers](https://kerkour.com/http-caching-etag-vs-last-modified).
 - [Monosoul](https://blog.monosoul.dev/) – a blog by Andrei Nevedomskii about Kotlin, typesafety, linux and databases. I love these guides: [Typesafety with Kotlin and jOOQ](https://blog.monosoul.dev/2023/06/23/type-safe-data-access-with-jooq-and-kotlin/), [Using liquibase with K8s](https://blog.monosoul.dev/2021/12/26/using-liquibase-with-kubernetes/). Worth mentioning, Andrei is also an author of [jooq-gradle-plugin](https://github.com/monosoul/jooq-gradle-plugin) which I [use](https://github.com/monosoul/jooq-gradle-plugin/issues/161) a lot.
+
 ## Other
 - [Whereby](https://whereby.com/) – API & SDK to integrate video calls to your website. Haven't used it yet, but seems to be a first candidate for the next project with video calls
- 
+- [Good day Project](https://github.blog/2021-05-25-octoverse-spotlight-good-day-project/) – researching when developers feel they had a good day
